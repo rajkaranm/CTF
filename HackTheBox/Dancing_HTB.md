@@ -14,7 +14,7 @@ PORT    STATE SERVICE       VERSION
 Service Info: OS: Windows; CPE: cpe:/o:microsoft:windows
 
 
-#### Understood
+#### Understood That 
 
 445 smbclient is running, so we use smbclient of samba to connect
 
@@ -30,35 +30,48 @@ Sharename       Type      Comment
 
 SMB1 disabled -- no workgroup available
 
-##### Then - 
+#### Then - 
 learned about smb client
 
-`smbclient \\\\{Target_IP}\\{All the sharename}`
+```bash
+smbclient \\\\{Target_IP}\\{All the sharename}
+```
 
 WorkShare worked and was able to access without password.
 
 Output -
 
+```bash
 smb \> `help`
+```
 
 There was all command, ls and get where two main command.
 
 I typed ls and there was two directory
+
+`
 Amy.J
 James.P
+`
 
-`cd James.P && ls`
+```bash
+cd James.P && ls
+```
 
 output -
+`
 .
 ..
 flag.txt
+`
 
-`get flag.txt`
+```bash
+get flag.txt
+```
 
 
 
-# Learnings
+# Learnings from solving this CTF
 
 What does SMB Stands for?
 - Server Message Block and use port `445`
